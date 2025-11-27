@@ -3,7 +3,6 @@
 <div align="center">
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-taskflow--saas1.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://taskflow-saas1.netlify.app/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/deployed/deploy-status)](https://taskflow-saas1.netlify.app/)
 
 **A modern, production-ready Full Stack Task Management application with premium UI/UX design**
 
