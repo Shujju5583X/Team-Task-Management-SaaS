@@ -1,3 +1,19 @@
+# 🚀 TaskFlow - Premium Team Task Management SaaS
+
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-taskflow--saas1.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://taskflow-saas1.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/deployed/deploy-status)](https://taskflow-saas1.netlify.app/)
+
+**A modern, production-ready Full Stack Task Management application with premium UI/UX design**
+
+Built with React, Node.js, Express, and PostgreSQL • Featuring glassmorphism effects, smooth animations, and advanced data visualization
+
+[Live Demo](https://taskflow-saas1.netlify.app/) • [Features](#-features) • [Screenshots](#-screenshots) • [Tech Stack](#️-tech-stack) • [Getting Started](#-getting-started)
+
+</div>
+
+---
 
 ## ✨ Features
 
