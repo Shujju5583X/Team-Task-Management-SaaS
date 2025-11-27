@@ -12,6 +12,24 @@
 - 🌙 **Dark Mode First** - Premium dark theme with vibrant accents
 - 🚀 **Production Ready** - Deployed on Netlify and Render
 
+## 📸 Screenshots
+
+### Authentication Page
+![Authentication Page](screenshots/auth-page.png)
+*Beautiful split-screen login/register page with glassmorphism effects*
+
+### Dashboard Overview
+![Dashboard](screenshots/dashboard.png)
+*Premium dashboard with stats cards, pie chart visualization, and completion tracking*
+
+### Task Management
+![Task List](screenshots/task-list.png)
+*Task list with filters, status badges, and inline editing*
+
+### Full Interface
+![Task Management Full](screenshots/task-management.png)
+*Complete interface showing sidebar navigation and task management*
+
 ## 🛠️ Tech Stack
 
 ### Frontend
