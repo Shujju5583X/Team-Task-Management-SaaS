@@ -1,19 +1,16 @@
-# 🚀 TaskFlow - Team Task Management SaaS
-
-A modern, production-ready Full Stack Task Management application built with React, Node.js, Express, and PostgreSQL. Features real-time updates, beautiful data visualizations, and a premium user interface.
-
-![TaskFlow Banner](https://via.placeholder.com/1200x400/0ea5e9/ffffff?text=TaskFlow+-+Modern+Task+Management)
 
 ## ✨ Features
 
-- 🔐 **Secure Authentication** - JWT-based auth with HttpOnly cookies
-- ⚡ **Optimistic UI Updates** - Lightning-fast user interactions
-- 📊 **Data Visualization** - Beautiful charts and progress tracking
-- 🎨 **Premium UI/UX** - Modern dark theme with Tailwind CSS
-- 📱 **Responsive Design** - Works seamlessly on all devices
-- 🔔 **Toast Notifications** - Real-time feedback for user actions
-- 🎯 **Task Management** - Create, update, delete, and filter tasks
-- 📈 **Analytics Dashboard** - Track productivity with stats cards
+- 🔐 **Secure Authentication** - JWT-based auth with HttpOnly cookies and password hashing
+- 🎨 **Premium UI/UX** - Glassmorphism, gradients, and smooth animations
+- ⚡ **Optimistic UI Updates** - Lightning-fast user interactions with automatic rollback
+- 📊 **Advanced Data Visualization** - Beautiful charts with Recharts library
+- 📱 **Fully Responsive** - Mobile-first design that works on all devices
+- 🔔 **Toast Notifications** - Real-time feedback for all actions
+- 🎯 **Smart Task Management** - Create, update, delete, and filter with ease
+- 📈 **Analytics Dashboard** - Track productivity with interactive stats
+- 🌙 **Dark Mode First** - Premium dark theme with vibrant accents
+- 🚀 **Production Ready** - Deployed on Netlify and Render
 
 ## 🛠️ Tech Stack
 

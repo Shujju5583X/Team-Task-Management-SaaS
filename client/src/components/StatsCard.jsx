@@ -1,27 +1,49 @@
 const StatsCard = ({ title, value, icon: Icon, color }) => {
     const colorClasses = {
-        blue: 'from-blue-600 to-blue-700',
-        yellow: 'from-yellow-600 to-yellow-700',
-        purple: 'from-purple-600 to-purple-700',
-        green: 'from-green-600 to-green-700',
+        blue: 'from-indigo-600 via-blue-600 to-cyan-600',
+        yellow: 'from-amber-500 via-yellow-500 to-orange-500',
+        purple: 'from-purple-600 via-violet-600 to-fuchsia-600',
+        green: 'from-emerald-600 via-green-600 to-teal-600',
     };
 
     const iconColorClasses = {
-        blue: 'bg-blue-500/20 text-blue-400',
-        yellow: 'bg-yellow-500/20 text-yellow-400',
-        purple: 'bg-purple-500/20 text-purple-400',
-        green: 'bg-green-500/20 text-green-400',
+        blue: 'bg-indigo-500/20 text-indigo-300',
+        yellow: 'bg-amber-500/20 text-amber-300',
+        purple: 'bg-purple-500/20 text-purple-300',
+        green: 'bg-emerald-500/20 text-emerald-300',
+    };
+
+    const shadowClasses = {
+        blue: 'hover:shadow-indigo-500/50',
+        yellow: 'hover:shadow-amber-500/50',
+        purple: 'hover:shadow-purple-500/50',
+        green: 'hover:shadow-emerald-500/50',
     };
 
     return (
-        <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}>
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl ${iconColorClasses[color]}`}>
-                    <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
+        <div className={`
+            relative overflow-hidden
+            bg-gradient-to-br ${colorClasses[color]} 
+            rounded-2xl p-6 
+            border border-white/10 
+            shadow-lg ${shadowClasses[color]}
+            card-hover
+            group
+        `}>
+            {/* Animated glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                    <div className={`p-3 rounded-xl ${iconColorClasses[color]} backdrop-blur-sm`}>
+                        <Icon className="w-6 h-6" />
+                    </div>
+                    {/* Floating animation */}
+                    <div className="w-12 h-12 bg-white/10 rounded-full blur-xl animate-float" />
                 </div>
+                <p className="text-white/80 text-sm font-medium mb-1">{title}</p>
+                <p className="text-4xl font-bold text-white">{value}</p>
             </div>
-            <p className="text-white/80 text-xs sm:text-sm font-medium mb-1">{title}</p>
-            <p className="text-2xl sm:text-4xl font-bold text-white">{value}</p>
         </div>
     );
 };
