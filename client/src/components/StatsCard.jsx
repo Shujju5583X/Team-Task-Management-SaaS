@@ -14,14 +14,14 @@ const StatsCard = ({ title, value, icon: Icon, color }) => {
     };
 
     return (
-        <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-2xl p-6 border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}>
-            <div className="flex items-center justify-between mb-4">
-                <div className={`p-3 rounded-xl ${iconColorClasses[color]}`}>
-                    <Icon className="w-6 h-6" />
+        <div className={`bg-gradient-to-br ${colorClasses[color]} rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}>
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl ${iconColorClasses[color]}`}>
+                    <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
             </div>
-            <p className="text-white/80 text-sm font-medium mb-1">{title}</p>
-            <p className="text-4xl font-bold text-white">{value}</p>
+            <p className="text-white/80 text-xs sm:text-sm font-medium mb-1">{title}</p>
+            <p className="text-2xl sm:text-4xl font-bold text-white">{value}</p>
         </div>
     );
 };

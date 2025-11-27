@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTaskContext } from '../context/TaskContext';
-import { Edit2, Trash2, Clock, AlertCircle, CheckCircle2, Filter } from 'lucide-react';
+import { Trash2, Clock, AlertCircle, Filter } from 'lucide-react';
 
 const TaskList = () => {
     const { tasks, loading, filter, setFilter, updateTask, deleteTask } = useTaskContext();
@@ -31,7 +31,7 @@ const TaskList = () => {
 
     if (loading) {
         return (
-            <div className="p-6 space-y-4">
+            <div className="p-4 sm:p-6 space-y-4">
                 {[1, 2, 3].map((i) => (
                     <div key={i} className="skeleton h-20 rounded-xl" />
                 ))}
@@ -42,14 +42,14 @@ const TaskList = () => {
     return (
         <div>
             {/* Filter Buttons */}
-            <div className="p-6 border-b border-gray-700">
-                <div className="flex items-center gap-2 flex-wrap">
-                    <Filter className="w-5 h-5 text-gray-400" />
+            <div className="p-4 sm:p-6 border-b border-gray-700">
+                <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
+                    <Filter className="w-5 h-5 text-gray-400 flex-shrink-0" />
                     {['ALL', 'TODO', 'IN_PROGRESS', 'DONE'].map((status) => (
                         <button
                             key={status}
                             onClick={() => setFilter(status)}
-                            className={`px-4 py-2 rounded-lg font-medium transition ${filter === status
+                            className={`px-3 sm:px-4 py-2 rounded-lg font-medium transition whitespace-nowrap text-sm sm:text-base ${filter === status
                                     ? 'bg-primary-600 text-white'
                                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                                 }`}
@@ -61,7 +61,7 @@ const TaskList = () => {
             </div>
 
             {/* Tasks */}
-            <div className="p-6 space-y-4">
+            <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                 {tasks.length === 0 ? (
                     <div className="text-center py-12">
                         <AlertCircle className="w-16 h-16 text-gray-600 mx-auto mb-4" />
@@ -72,20 +72,20 @@ const TaskList = () => {
                     tasks.map((task) => (
                         <div
                             key={task.id}
-                            className="bg-gray-700/50 rounded-xl p-5 border border-gray-600 hover:border-gray-500 transition-all animate-fade-in"
+                            className="bg-gray-700/50 rounded-xl p-4 sm:p-5 border border-gray-600 hover:border-gray-500 transition-all animate-fade-in"
                         >
-                            <div className="flex items-start justify-between mb-3">
-                                <div className="flex-1">
-                                    <h4 className="text-lg font-semibold text-white mb-2">{task.title}</h4>
+                            <div className="flex items-start justify-between mb-3 gap-3">
+                                <div className="flex-1 min-w-0">
+                                    <h4 className="text-base sm:text-lg font-semibold text-white mb-2 break-words">{task.title}</h4>
                                     {task.description && (
-                                        <p className="text-gray-400 text-sm mb-3">{task.description}</p>
+                                        <p className="text-gray-400 text-sm mb-3 break-words">{task.description}</p>
                                     )}
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                                         {editingId === task.id ? (
                                             <select
                                                 value={task.status}
                                                 onChange={(e) => handleStatusChange(task.id, e.target.value)}
-                                                className="px-3 py-1 bg-gray-600 border border-gray-500 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                                className="px-3 py-1.5 bg-gray-600 border border-gray-500 rounded-lg text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
                                             >
                                                 <option value="TODO">To Do</option>
                                                 <option value="IN_PROGRESS">In Progress</option>
@@ -94,21 +94,22 @@ const TaskList = () => {
                                         ) : (
                                             <span
                                                 onClick={() => setEditingId(task.id)}
-                                                className={`px-3 py-1 rounded-lg text-xs font-semibold border cursor-pointer transition hover:opacity-80 ${statusColors[task.status]
+                                                className={`px-2 sm:px-3 py-1 rounded-lg text-xs font-semibold border cursor-pointer transition hover:opacity-80 ${statusColors[task.status]
                                                     }`}
                                             >
                                                 {task.status.replace('_', ' ')}
                                             </span>
                                         )}
                                         <span className={`text-xs font-semibold ${priorityColors[task.priority]}`}>
-                                            {task.priority} PRIORITY
+                                            {task.priority}
                                         </span>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 flex-shrink-0">
                                     <button
                                         onClick={() => handleDelete(task.id)}
                                         className="p-2 bg-red-600/20 hover:bg-red-600/30 text-red-400 rounded-lg transition"
+                                        aria-label="Delete task"
                                     >
                                         <Trash2 className="w-4 h-4" />
                                     </button>
@@ -116,7 +117,7 @@ const TaskList = () => {
                             </div>
                             <div className="flex items-center gap-2 text-xs text-gray-500">
                                 <Clock className="w-3 h-3" />
-                                Created {new Date(task.createdAt).toLocaleDateString()}
+                                <span className="truncate">Created {new Date(task.createdAt).toLocaleDateString()}</span>
                             </div>
                         </div>
                     ))
